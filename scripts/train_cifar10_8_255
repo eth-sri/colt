@@ -1,0 +1,15 @@
+#!/bin/bash
+
+python code/main.py \
+       --train-mode train \
+       --dataset cifar10 \
+       --net convmed_flat_2_4_250 \
+       --train-batch 150 --test-batch 100 \
+       --train-eps 0.031372549 --start-eps-factor 1.05 --eps-factor 1.2 \
+       --layers -2 -1 2 4 \
+       --train-att-n-steps 8 --train-att-step-size 0.25 --test-att-n-steps 40 --test-att-step-size 0.035 \
+       --opt sgd --lr 0.03 --lr-step 10 --lr-factor 0.5 --lr-layer-dec 0.5 \
+       --mix --mix-epochs 60 --n-epochs 200 \
+       --l1-reg 0.000005 --relu-stable 0.003 --relu-stable-factor 1.5 \
+       --test-freq 50
+       

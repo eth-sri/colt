@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Try 1
+python code/verify.py \
+       --dataset cifar10 \
+	   --net convmedbig_flat_2_2_4_250 \
+	   --load_model trained_models/cifar10_2_255_convmedbig_flat_2_2_4_250.pt \
+	   --test_eps 0.00784313725 \
+	   --attack_restarts 20 --test_att_n_steps 100 --test_att_step_size 0.015 \
+	   --start_idx 0 --end_idx 10000 \
+	   --num_iters 100 \
+	   --layer_idx 6\
+	   --refine_lidx 3 \
+	   --milp_timeout 1000 \
+	   --max_binary 30 \
+	   --test_batch 20 \
+	   --fail_break
+
+# Try 2
+python code/verify.py \
+       --dataset cifar10 \
+	   --net convmedbig_flat_2_2_4_250 \
+	   --load_model trained_models/cifar10_2_255_convmedbig_flat_2_2_4_250.pt \
+	   --test_eps 0.00784313725 \
+	   --attack_restarts 20 --test_att_n_steps 100 --test_att_step_size 0.015 \
+	   --start_idx 0 --end_idx 10000 \
+	   --num_iters 100 \
+	   --layer_idx 6\
+	   --refine_lidx 3 \
+	   --milp_timeout 1000 \
+	   --max_binary 100 \
+	   --test_batch 20 \
+	   --fail_break
+
+# Try 3
+python code/verify.py \
+	   --dataset cifar10 \
+	   --net convmedbig_flat_2_2_4_250 \
+	   --load_model trained_models/cifar10_2_255_convmedbig_flat_2_2_4_250.pt \
+	   --test_eps 0.00784313725 \
+	   --attack_restarts 20 --test_att_n_steps 100 --test_att_step_size 0.015 \
+	   --start_idx 0 --end_idx 10000 \
+	   --num_iters 100 \
+	   --layer_idx 5 --latent_idx 6 \
+	   --refine_lidx 3 \
+	   --milp_timeout 3600 \
+	   --max_binary 60 \
+	   --test_batch 20 \
+	   --fail_break

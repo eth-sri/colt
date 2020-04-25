@@ -59,7 +59,7 @@ by manipulating `start_idx` and `end_idx` arguments in the scripts.
 
 Citing this work
 ---------------------
-
+```
 @inproceedings{balunovic2020Adversarial,
 	title={Adversarial Training and Provable Defenses: Bridging the Gap},
 	author={Mislav Balunovic and Martin Vechev},
@@ -67,7 +67,7 @@ Citing this work
 	year={2020},
 	url={https://openreview.net/forum?id=SJxSDxrKDr}
 }
-
+```
 Contributors
 ------------
 
