@@ -225,7 +225,7 @@ def train(device, writer, epoch, args, prev_layer_idx, curr_layer_idx, next_laye
         train_padv_ok += padv_ok.item()
 
         l1_loss = args.l1_reg * compute_l1_loss(net)
-        tot_loss = nat_loss * args.nat_factor * nat_loss + (1 - args.nat_factor) * (kappa * adv_loss + (1 - kappa) * padv_loss) + l1_loss
+        tot_loss = nat_loss * args.nat_factor + (1 - args.nat_factor) * (kappa * adv_loss + (1 - kappa) * padv_loss) + l1_loss
         if next_layer_idx is not None and relu_stable is not None:
             next_lb, next_ub = bounds[next_layer_idx]
             is_cross = (next_lb < 0) & (next_ub > 0)
